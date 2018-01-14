@@ -801,44 +801,47 @@ EOF;
 
     public function provideWhenImportedClassIsUsedForConstantsCases()
     {
-        return array(
-            array(
+        return [
+            [
                 '<?php
 use A\ABC;
 $a = 5-ABC::Test;
 $a = 5-ABC::Test-5;
 $a = ABC::Test-5;
 ',
-            ),
-            array(
+            ],
+            [
                 '<?php
 use A\ABC;
 $a = 5-ABC::Test;
 $a = 5-ABC::Test-5;
 ',
-            ),
-            array(
+            ],
+            [
                 '<?php
 use A\ABC;
 $a = 5-ABC::Test;
 ',
-            ),
-            array('<?php
+            ],
+            [
+                '<?php
 use A\ABC;
 $a = ABC::Test-5;
 ',
-            ),
-            array('<?php
+            ],
+            [
+                '<?php
 use A\ABC;
 $a = 5-ABC::Test-5;
 ',
-            ),
-            array('<?php
+            ],
+            [
+                '<?php
 use A\ABC;
 $b = $a-->ABC::Test;
 ',
-            ),
-        );
+            ],
+        ];
     }
 
     /**
